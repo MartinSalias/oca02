@@ -37,7 +37,7 @@ class Uno
 	end
 
 	def analizojugada(valor)
-		if valor==1
+		if valor==1  ## pierde los puntos y cambia de turno
 			if @turno=="A"
 				@puntajeA=0
 				@turno="B"
@@ -51,12 +51,17 @@ class Uno
  			else
 				@puntajeB += valor
 			end
-			if @puntajeA > 100 ||  @puntajeB > 100
-				return 1
-			else
-				return 0
-			end
+
 		end
+		if @puntajeA > 100 ||  @puntajeB > 100
+			return 1  ## Ganador
+		else
+			return 0  ## aun no ganó nadie
+		end
+	end
+
+	def quienjuega
+		return @turno
 	end
 end
 
