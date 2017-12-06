@@ -50,8 +50,17 @@ describe "Juego uno" do
 		partido.analizojugada(50)
 		partido.analizojugada(55).should == 1
 		partido.mostrarjugadorA.should==105
-##		partido.analizojugada.should == 1
 
+	end
+
+	it "Analizo jugad: A saca 1" do
+		partido = Uno.new
+#		partido.tirardado
+		partido.analizojugada(50)
+		partido.analizojugada(1).should == 0
+		partido.mostrarjugadorA.should==0
+		partido.mostrarjugadorB.should == 0
+		partido.quienjuega.should == "B"
 	end
 
 #	it "Tirar dado" do
