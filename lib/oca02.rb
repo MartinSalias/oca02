@@ -1,25 +1,62 @@
 class Uno
 
 	def initialize
-#		@vtanteador= %w{Cero Quince Treinta Cuarenta}
-		@jugadorA=0
-		@jugadorB=0
+		@puntajeA=0
+		@puntajeB=0
+		@valordado=0
+		@turno="A"
 	end
 
 	def cerearjugadorA
-		@jugadorA=0	
+		@puntajeA=0	
 	end
+
 	def mostrarjugadorA
-		return @jugadorA=0	
+		return @puntajeA	
 	end
 
 	def cerearjugadorB
-		@jugadorB=0	
+		@puntajeB=0	
 	end
+
 	def mostrarjugadorB
-		return @jugadorB=0	
+		return @puntajeB	
 	end
+
 	def tirardado
-		return rand(6) + 1
+		@valordado = rand(6) + 1
+		return @valordado
+	end
+
+	def acumularjugadorA(valor)
+		return @puntajeA += valor
+	end
+
+	def acumularjugadorB(valor)
+		return @puntajeB += valor
+	end
+
+	def analizojugada(valor)
+		if valor==1
+			if @turno=="A"
+				@puntajeA=0
+				@turno="B"
+			else
+				@puntajeB=0
+				@turno="A"
+			end
+		else
+			if @turno=="A"
+				@puntajeA += valor
+ 			else
+				@puntajeB += valor
+			end
+			if @puntajeA > 100 ||  @puntajeB > 100
+				return 1
+			else
+				return 0
+			end
+		end
 	end
 end
+
