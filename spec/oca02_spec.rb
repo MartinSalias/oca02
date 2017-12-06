@@ -62,6 +62,21 @@ describe "Juego uno" do
 		partido.mostrarjugadorB.should == 0
 		partido.quienjuega.should == "B"
 	end
+  it "Jugador se planta" do
+		partido = Uno.new
+		partido.analizojugada(50)
+		partido.mostrarjugadorA.should == 50
+	  partido.plantarse
+		partido.mostrarjugadorA.should == 50
+		partido.quienjuega.should == "B"
+		partido.analizojugada(50)
+		partido.mostrarjugadorB.should == 50
+	  partido.plantarse
+		partido.quienjuega.should == "A"
+		partido.mostrarjugadorA.should == 50
+		partido.mostrarjugadorB.should == 50
+
+  end
 
 #	it "Tirar dado" do
 #		partido = Uno.new

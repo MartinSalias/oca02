@@ -41,10 +41,13 @@ class Uno
 			if @turno=="A"
 				@puntajeA=0
 				@turno="B"
+				@valordado=0
 			else
 				@puntajeB=0
 				@turno="A"
+				@valordado=0
 			end
+			@valordado=0
 		else
 			if @turno=="A"
 				@puntajeA += valor
@@ -53,7 +56,7 @@ class Uno
 			end
 
 		end
-		if @puntajeA > 100 ||  @puntajeB > 100
+		if @puntajeA > 10 ||  @puntajeB > 10
 			return 1  ## Ganador
 		else
 			return 0  ## aun no ganó nadie
@@ -62,6 +65,13 @@ class Uno
 
 	def quienjuega
 		return @turno
+	end
+  def plantarse
+		if @turno=="A"
+					@turno="B"
+		else
+					@turno="A"
+		end
 	end
 end
 

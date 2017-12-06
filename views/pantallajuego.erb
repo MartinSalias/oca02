@@ -1,13 +1,20 @@
-<form method="post" action="/tirardado">
+<h1>Juego UNO</h1>
+</br>
+<p> Jugador A: <%= @@puntajeA %> </p>
+<p> Jugador B: <%= @@puntajeB %> </p>
+</br>
+</br>
+<img scr="" />
+</br>
+<p> Resultado Jugador <%= @@turno %> : <%= @@valordado %> </p>
+</br>
+</br>
+</br>
 
-  <p> Jugador 1: <%= @@puntajeA %> </p>
-  <p> Jugador 2: <%= @@puntajeB %> </p>
-  </br>
-  </br>
-  <img scr="" />
-  <p> Resultado: <%= @@resultado %> </p>
-  </br>
-  </br>
-  <input type= "submit" value= "Tirar Dado" />
+<form method="post" action="/tirardado">
+  <input type= "submit" value= "TiraDado" />
+</form>
+
+<form method="post" action="/plantarse">
   <input type= "submit" value= "Plantarse" />
 </form>
